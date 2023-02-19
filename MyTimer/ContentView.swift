@@ -21,6 +21,15 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 // アスペクト比を維持して親に合わせてビューをスケーリング
                     .scaledToFill()
+                
+                // 縦方向にレイアウト
+                // View間の感覚を30にする
+                VStack(spacing: 30.0) {
+                    // テキスト表示
+                    Text("残り10秒")
+                    // 文字サイズを指定
+                        .font(.largeTitle)
+                }
             }
             // ナビゲーションにボタン追加
             .toolbar {
