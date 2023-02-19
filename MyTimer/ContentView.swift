@@ -29,6 +29,25 @@ struct ContentView: View {
                     Text("残り10秒")
                     // 文字サイズを指定
                         .font(.largeTitle)
+                    // 横方向にレイアウト
+                    HStack {
+                        // スタートボタン
+                        Button {
+                            // ボタンをタップした時のアクション
+                        } label: {
+                            Text("スタート")
+                            // 文字サイズを指定
+                                .font(.title)
+                            // 文字色を白に指定
+                                .foregroundColor(Color.white)
+                            // 幅高さを140に指定
+                                .frame(width: 140, height: 140)
+                            // 背景を指定
+                                .background(Color("startColor"))
+                            // 円形に切り抜く
+                                .clipShape(Circle())
+                        }
+                    }
                 }
             }
             // ナビゲーションにボタン追加
