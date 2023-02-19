@@ -47,6 +47,22 @@ struct ContentView: View {
                             // 円形に切り抜く
                                 .clipShape(Circle())
                         }
+                        // ストップボタン
+                        Button {
+                            // ボタンをタップした時のアクション
+                        } label: {
+                            Text("ストップ")
+                            // 文字サイズを指定
+                                .font(.title)
+                            // 文字色を白に指定
+                                .foregroundColor(Color.white)
+                            // 幅高さを140に指定
+                                .frame(width: 140, height: 140)
+                            // 背景を設定
+                                .background(Color("stopColor"))
+                            // 円形に切り抜く
+                                .clipShape(Circle())
+                        }
                     }
                 }
             }
