@@ -11,8 +11,16 @@ struct ContentView: View {
     var body: some View {
         // 階層的な画面遷移を管理する機能
         NavigationStack {
-            VStack {
-                Text("タイマー画面")
+            // 奥から手前方向にレイアウト
+            ZStack {
+                // 背景画像
+                Image("backgroundTimer")
+                // リサイズする
+                    .resizable()
+                // セーフエリアを「超えて画面全体に配置
+                    .ignoresSafeArea()
+                // アスペクト比を維持して親に合わせてビューをスケーリング
+                    .scaledToFill()
             }
             // ナビゲーションにボタン追加
             .toolbar {
