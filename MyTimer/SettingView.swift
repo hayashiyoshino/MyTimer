@@ -9,7 +9,13 @@ import SwiftUI
 
 struct SettingView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        // 奥から手前方向にレイアウト
+        ZStack {
+            // 背景色表示
+            Color("backgroundSetting")
+            // セーフエリアを超えて画面全体に配置
+                .ignoresSafeArea()
+        }
     }
 }
 
