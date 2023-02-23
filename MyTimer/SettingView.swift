@@ -20,6 +20,12 @@ struct SettingView: View {
                 .ignoresSafeArea()
             // 縦方向にレイアウト
             VStack {
+                Spacer()
+                // テキストを表示
+                Text("\(timerValue)秒")
+                // 文字サイズを指定
+                    .font(.largeTitle)
+                Spacer()
                 // Pickerを表示
                 Picker(selection: $timerValue) {
                     Text("10")
@@ -39,6 +45,7 @@ struct SettingView: View {
                 }
                 // Pickerをホイール表示
                 .pickerStyle(.wheel)
+                Spacer()
             }
         }
     }
