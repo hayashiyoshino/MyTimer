@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    // タイマーの変数
+    @State var TimerHandler : Timer?
+    // カウントの変数
+    @State var count = 0
+    // 永続化する秒数設定
+    @AppStorage("timer_value") var timerValue = 10
+    
     var body: some View {
         // 階層的な画面遷移を管理する機能
         NavigationStack {
