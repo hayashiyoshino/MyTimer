@@ -88,6 +88,17 @@ struct ContentView: View {
             }
         }
     }
+    
+    // 1秒ごとに実行されてカウントダウンする
+    func countDownTimer() {
+        // countに+1していく
+        count += 1
+        
+        // 残り時間が0以下の時タイマーを止める
+        if timerValue - count <= 0 {
+            TimerHandler?.invalidate()
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
