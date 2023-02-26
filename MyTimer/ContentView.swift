@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     // タイマーの変数
-    @State var TimerHandler : Timer?
+    @State var timerHandler : Timer?
     // カウントの変数
     @State var count = 0
     // 永続化する秒数設定
@@ -96,7 +96,9 @@ struct ContentView: View {
         
         // 残り時間が0以下の時タイマーを止める
         if timerValue - count <= 0 {
-            TimerHandler?.invalidate()
+            timerHandler?.invalidate()
+        }
+    }
     
     // タイマーをカウントダウン開始する関数
     func startTimer() {
