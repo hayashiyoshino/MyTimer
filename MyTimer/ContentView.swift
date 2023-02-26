@@ -97,6 +97,28 @@ struct ContentView: View {
         // 残り時間が0以下の時タイマーを止める
         if timerValue - count <= 0 {
             TimerHandler?.invalidate()
+    
+    // タイマーをカウントダウン開始する関数
+    func startTimer() {
+        // timerHandlerをアンラップしてunwrappedTimerHandlerに代入
+        if let unwrapedTimerHandler = timerHandler {
+            // もしタイマーが実行中だったらスタートしない
+            if unwrapedTimerHandler.isValid == true {
+                // 何もしない
+                return
+            }
+        }
+        
+        // 残り時間が0以下の時countを0に初期化する
+        if timerValue - count <= 0 {
+            count = 0
+        }
+        
+        // タイマーをスタート
+        timerHandler = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            // タイマー実行時に呼び出される
+            // 1秒ごとに実行されてカウントダウンする関数を実行
+            countDownTimer()
         }
     }
 }
