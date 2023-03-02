@@ -41,6 +41,8 @@ struct ContentView: View {
                         // スタートボタン
                         Button {
                             // ボタンをタップした時のアクション
+                            // タイマーをカウントダウン開始する関数を呼び出す
+                            startTimer()
                         } label: {
                             Text("スタート")
                             // 文字サイズを指定
