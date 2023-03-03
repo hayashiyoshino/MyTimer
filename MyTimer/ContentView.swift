@@ -59,6 +59,14 @@ struct ContentView: View {
                         // ストップボタン
                         Button {
                             // ボタンをタップした時のアクション
+                            // timerHandlerをアンラップしてunwrapedTimerHandlerに代入
+                            if let unwrapedTimerHandler = timerHandler {
+                                // もしタイマーが実行中だったら停止
+                                if unwrapedTimerHandler.isValid == true {
+                                    // タイマー停止
+                                    unwrapedTimerHandler.invalidate()
+                                }
+                            }
                         } label: {
                             Text("ストップ")
                             // 文字サイズを指定
