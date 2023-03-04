@@ -33,7 +33,7 @@ struct ContentView: View {
                 // View間の感覚を30にする
                 VStack(spacing: 30.0) {
                     // テキスト表示
-                    Text("残り10秒")
+                    Text("残り\(timerValue - count)秒")
                     // 文字サイズを指定
                         .font(.largeTitle)
                     // 横方向にレイアウト
